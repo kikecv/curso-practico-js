@@ -15,14 +15,25 @@ colombia.push({
     salary:3200
 })
 
-colombia.push({
-    name:"Pablo",
-    salary:3800
-})
 
 colombia.push({
     name:"Daniel",
     salary:1500
+})
+
+colombia.push({
+    name:"Gabriel",
+    salary:2200
+})
+
+colombia.push({
+    name:"Miguel",
+    salary:1200
+})
+
+colombia.push({
+    name:"Pablo",
+    salary:3800
 })
 
 colombia.push({
@@ -46,6 +57,6 @@ colombia.push({
 })
 
 colombia.push({
-    name:"Gabriel",
-    salary:2200
+    name:"Alberto",
+    salary:9000
 })

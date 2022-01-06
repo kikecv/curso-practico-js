@@ -1,0 +1,33 @@
+form {
+    width: 50%;
+    /* Esquema del formulario */
+    padding: 1em;
+    text-align: center;
+  }
+  
+  label {
+    /* Tamaño y alineación uniforme */
+    display: inline-block;
+    width: 200px;
+    text-align: right;
+  }
+  
+  input {
+    /* Tamaño uniforme del campo de texto */
+    box-sizing: border-box;
+    width: 100px;
+    /* Hacer coincidir los bordes del campo del formulario */
+    border: 1px solid #999;
+  }
+  
+  input:focus {
+    /* Destacado adicional para elementos que tienen el cursor */
+    border-color: #000;
+  }
+
+ .calculo {
+    margin: 0.5rem;
+
+    /* IMPORTANTE */
+    text-align: center;
+  }

@@ -11,21 +11,29 @@ function onClickButtonPriceDiscount() {
     const couponValue = inputCoupon.value;
 
     const userCoupon = coupons.find(function (coupon) {
+        console.log(coupon.name + " " + couponValue)
         return coupon.name === couponValue
     })
+
+    const resultP = document.getElementById("ResultPrice");
     if (!userCoupon) {
-        alert("El cupón " + couponValue + " no es válido");
+        resultP.innerText = "El cupón ingresado " + couponValue + " no es válido";
     } else {
         const discountValue = userCoupon.discount;
-        const resultP = document.getElementById("ResultPrice");
         resultP.innerText = "El precio con descuento es $" + calcularPrecioConDescuento(priceValue, discountValue);
     }
 }
 
 const coupons = [
-    { name: "Cupon1", discount: 15 },
-    { name: "Cupon2", discount: 30 },
-    { name: "Cupon3", discount: 25 }
+    { name: "cupon1", discount: 15 },
+    { name: "cupon2", discount: 30 },
+    { name: "cupon3", discount: 25 }
 ]
+
+var listaCupones = coupons.map(function (coupon) {
+    return ' ' + coupon.name + ': ' + coupon.discount + '%'
+})
+document.getElementById("cupones").innerHTML = listaCupones;
+
 
 

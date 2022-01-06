@@ -1,16 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salarios</title>
+    <title>Salarios | Curso JavaScript</title>
+    <link rel="stylesheet" href="./styles.css" type="text/css">
 </head>
+
 <body>
     <header>
-        <h1>Salarios</h1>
+        <h1>Salarios | Taller Práctico #4 de JavaScript</h1>
     </header>
+    <section>
+        <form>
+            <fieldset>
+                <legend>
+                    <h2>Calcula Mediana - 10% de trabajadores con sueldos mas altos</h2>
+                </legend>
+                <div>
+                    <label for="InputNombre">Nombre:</label>
+                    <input id="InputNombre" type="text">
+                </div>
+                <div>
+                    <label for="InputSueldo">Sueldo:</label>
+                    <input id="InputSueldo" type="number">
+                </div>
+                <div id="listaTrabajadores">
+                </div>
+                <div class="calculo">
+                    <button type="button" onClick="addNewWorker()">Registrar trabajador</button>
+                    <button type="button" onClick="onClickMediana10perMaxSalarios()">Calcular Mediana</button>
+                </div>
+                <p id="resultado"></p>
+            </fieldset>
+        </form>
+    </section>
+    <section>
+        <a href="./index.html">
+            << Ir al Menú</a>
+    </section>
     <script src="./salarios.js"></script>
     <script src="./analisis.js"></script>
 </body>
+
 </html>

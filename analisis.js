@@ -4,7 +4,6 @@ function esPar(numero) {
 }
 
 function mediaAritmetica(lista) {
-
     const listaSuma = lista.reduce(function (valorAnterior, valorTotal = 0) {
         return valorTotal + valorAnterior;
     })
@@ -25,30 +24,53 @@ function medianaSalarios(lista) {
     }
 }
 
-//Mediana General
-const salariosColombia = colombia.map(
-    function (persona) {
-        return persona.salary;
-    }
-)
-
-const salariosColombiaSorted = salariosColombia.sort(
-    function (a, b) {
-        return a - b;
-    }
-)
-
-const medianaGeneralColombia = medianaSalarios(salariosColombiaSorted);
-
 //Mediana del top 10%
-const spliceStart = (salariosColombiaSorted.length * 90) / 100;
-const spliceCount = salariosColombiaSorted.length -spliceStart;
 
-const salariosColombiaTop10 = salariosColombiaSorted.splice(spliceStart,spliceCount);
+const porcentajeEvaluar = 10;
 
-const medianaTop10Colombia = medianaSalarios(salariosColombiaTop10);
+function calculaMediana10perMaxSalarios(porcentaje,lista) {
 
-console.log({
-    medianaGeneralColombia,
-    medianaTop10Colombia,
-});
+    const salarios = lista.map(
+        function (persona) {
+            return persona.salary;
+        }
+    )
+    
+    const salariosSorted = salarios.sort(
+        function (a, b) {
+            return a - b;
+        }
+    )
+
+    const porcentajeDescartar = (100 - porcentaje);
+    const spliceStart = parseInt((salariosSorted.length * porcentajeDescartar) / 100);
+    const spliceCount = salariosSorted.length - spliceStart;
+
+    const salariosColombiaTop10 = salariosSorted.splice(spliceStart, spliceCount);
+    return medianaSalarios(salariosColombiaTop10);
+
+}
+
+function showTrabajadores(sueldos) {
+    var listaT = sueldos.map(function (worker) {
+        return '<br>' + 'Nombre: ' + worker.name + '| Sueldo: ' + worker.salary
+    })
+    document.getElementById("listaTrabajadores").innerHTML = listaT;
+}
+
+function addNewWorker() {
+    const nombre = document.getElementById("InputNombre");
+    const nombreV = nombre.value;
+    const sueldo = document.getElementById("InputSueldo");
+    const sueldoV = Number(sueldo.value);
+    colombia.push({ name: nombreV, salary: sueldoV });
+    showTrabajadores(colombia);
+}
+
+function onClickMediana10perMaxSalarios() {
+    const mediana10pMaxSalarios = calculaMediana10perMaxSalarios(porcentajeEvaluar,colombia); 
+    document.getElementById("resultado").innerText ="La Mediana del 10% de maximos salarios es: "+mediana10pMaxSalarios; 
+}
+
+showTrabajadores(colombia);
+

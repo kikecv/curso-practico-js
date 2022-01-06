@@ -4,12 +4,46 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Promedio</title>
+    <link rel="stylesheet" href="./styles.css" type="text/css">
+    <title>Promedio | Curso JavaScript</title>
 </head>
 <body>
     <header>
-        <h1>Promedio</h1>
+        <h1>Promedio  | Taller Práctico #3a de JavaScript</h1>
     </header>
+    <section>
+        <form>
+            <fieldset>
+                <legend>
+                    <h2>Calcula el promedio de una lista de numeros</h2>
+                </legend>
+                <div>
+                    <label for="numero">Ingrese nuevo número:</label>
+                    <input id="numero" type="number">
+                </div>
+                <div>
+                    <p id ="listaNumeros">
+                    </p>
+                </div>
+                <button type="button" onClick="onClickAdd()">
+                    Añadir a la lista
+                </button>
+                <button type="button" onClick="onClickMediaAritmetica()">
+                    Calcular promedio
+                </button>
+                <div>
+                    <p id="resultado"></p>
+
+                </div>
+            </fieldset>
+        </form>
+    </section>
+    
+    <section>
+        <a href="./index.html"> << Ir al Menú</a>
+    </section>
+
     <script src="./promedio.js"></script>
+
 </body>
 </html>

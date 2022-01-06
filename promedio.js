@@ -1,20 +1,28 @@
 const lista1 = [
-    100,
-    200,
-    300,
-    500
+    
 ];
 
-function calcularMediaAritmetica(lista) {
-    //let sumaLista=0;
-    //for (let element of lista) {
-    //    sumaLista = sumaLista + element;
-    //}
+const listaNumeros = document.getElementById("listaNumeros");
+listaNumeros.innerText = "Lista de numeros: " + lista1;
 
+function calcularMediaAritmetica(lista) {
     const sumaLista = lista.reduce(
-        function(nuevoElemento, valorAcumulado=0){
-            return valorAcumulado + nuevoElemento;
+        function (nuevoElemento, valorAcumulado) {
+            return nuevoElemento + valorAcumulado;
         }
     );
     return sumaLista / lista.length
 }
+
+function onClickMediaAritmetica() {
+    const promedio = document.getElementById("resultado");
+    promedio.innerText = "El promedio de la lista es: " + calcularMediaAritmetica(lista1);
+}
+
+function onClickAdd() {
+    const nuevo = document.getElementById("numero");
+    const valor = nuevo.value;
+    lista1.push(Number(valor));
+    listaNumeros.innerText = "Lista de numeros: " + lista1;
+}
+

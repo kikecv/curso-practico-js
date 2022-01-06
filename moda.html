@@ -1,15 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moda</title>
+    <link rel="stylesheet" href="./styles.css">
+    <title>Moda | Curso JavaScript</title>
 </head>
+
 <body>
     <header>
-        <h1>Moda</h1>
+        <h1>Moda | Taller Práctico #3c de JavaScript</h1>
     </header>
+    <form>
+        <fieldset>
+            <legend>
+                <h2>Calcular la moda de una lista de numeros</h2>
+            </legend>
+
+            <div>
+                <label for="numero">Ingrese nuevo número:</label>
+                <input id="numero" type="number">
+            </div>
+            <div>
+                <p id="listaNumeros">
+                </p>
+            </div>
+            <button type="button" onClick="onClickAdd()">
+                Añadir a la lista
+            </button>
+            <button type="button" onClick="onClickModa()">
+                Calcular Moda
+            </button>
+            <div>
+                <p id="resultado"></p>
+
+            </div>
+        </fieldset>
+    </form>
+
+    <section>
+        <a href="./index.html">
+            << Ir al Menú</a>
+    </section>
     <script src="./moda.js"></script>
 </body>
+
 </html>
